@@ -1,33 +1,36 @@
 {
   "format": 1,
   "restore": {
-    "/Users/danielchung/Desktop/MarcasAutos/MarcasAutos.test/MarcasAutos.test.csproj": {}
+    "C:\\Users\\Daniel Chung\\Desktop\\assa-challenge\\MarcasAutos.test\\MarcasAutos.test.csproj": {}
   },
   "projects": {
-    "/Users/danielchung/Desktop/MarcasAutos/MarcasAutos.test/MarcasAutos.test.csproj": {
+    "C:\\Users\\Daniel Chung\\Desktop\\assa-challenge\\MarcasAutos.test\\MarcasAutos.test.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/danielchung/Desktop/MarcasAutos/MarcasAutos.test/MarcasAutos.test.csproj",
+        "projectUniqueName": "C:\\Users\\Daniel Chung\\Desktop\\assa-challenge\\MarcasAutos.test\\MarcasAutos.test.csproj",
         "projectName": "MarcasAutos.test",
-        "projectPath": "/Users/danielchung/Desktop/MarcasAutos/MarcasAutos.test/MarcasAutos.test.csproj",
-        "packagesPath": "/Users/danielchung/.nuget/packages/",
-        "outputPath": "/Users/danielchung/Desktop/MarcasAutos/MarcasAutos.test/obj/",
+        "projectPath": "C:\\Users\\Daniel Chung\\Desktop\\assa-challenge\\MarcasAutos.test\\MarcasAutos.test.csproj",
+        "packagesPath": "C:\\Users\\Daniel Chung\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Daniel Chung\\Desktop\\assa-challenge\\MarcasAutos.test\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/danielchung/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\Daniel Chung\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "/Users/danielchung/Desktop/MarcasAutos/MarcasAutos/MarcasAutos.csproj": {
-                "projectPath": "/Users/danielchung/Desktop/MarcasAutos/MarcasAutos/MarcasAutos.csproj"
+              "C:\\Users\\Daniel Chung\\Desktop\\assa-challenge\\MarcasAutos\\MarcasAutos.csproj": {
+                "projectPath": "C:\\Users\\Daniel Chung\\Desktop\\assa-challenge\\MarcasAutos\\MarcasAutos.csproj"
               }
             }
           }
@@ -92,26 +95,29 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.401/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "/Users/danielchung/Desktop/MarcasAutos/MarcasAutos/MarcasAutos.csproj": {
+    "C:\\Users\\Daniel Chung\\Desktop\\assa-challenge\\MarcasAutos\\MarcasAutos.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/danielchung/Desktop/MarcasAutos/MarcasAutos/MarcasAutos.csproj",
+        "projectUniqueName": "C:\\Users\\Daniel Chung\\Desktop\\assa-challenge\\MarcasAutos\\MarcasAutos.csproj",
         "projectName": "MarcasAutos",
-        "projectPath": "/Users/danielchung/Desktop/MarcasAutos/MarcasAutos/MarcasAutos.csproj",
-        "packagesPath": "/Users/danielchung/.nuget/packages/",
-        "outputPath": "/Users/danielchung/Desktop/MarcasAutos/MarcasAutos/obj/",
+        "projectPath": "C:\\Users\\Daniel Chung\\Desktop\\assa-challenge\\MarcasAutos\\MarcasAutos.csproj",
+        "packagesPath": "C:\\Users\\Daniel Chung\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Daniel Chung\\Desktop\\assa-challenge\\MarcasAutos\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/danielchung/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\Daniel Chung\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -177,7 +183,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.401/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

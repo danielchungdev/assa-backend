@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("MarcasAutos")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a755c43da9e70d98e99aacce4e5311814839d126")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+36617d9b6023c94ea390deec5caa3b4cdc2d0903")]
 [assembly: System.Reflection.AssemblyProductAttribute("MarcasAutos")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MarcasAutos")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
