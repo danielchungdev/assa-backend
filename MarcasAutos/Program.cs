@@ -6,62 +6,69 @@ public class Program
     public static void Main(string[] args)
     {
         var builder = WebApplication.CreateBuilder(args);
+        ConfigurarWebHost(builder);
+        ConfigurarServicios(builder);
 
+        var app = builder.Build();
+        AplicarMigrations(app);
+        ConfigurarApp(app);
+
+        app.Run();
+    }
+    
+    //Configure webhost
+    private static void ConfigurarWebHost(WebApplicationBuilder builder)
+    {
         builder.WebHost.ConfigureKestrel(serverOptions =>
         {
             serverOptions.ListenAnyIP(80);
         });
-
-        ConfigurarServicios(builder);
-
-        var app = builder.Build();
-
-        using (var scope = app.Services.CreateScope())
-        {
-            var services = scope.ServiceProvider;
-            try
-            {
-                var context = services.GetRequiredService<MarcasAutosDbContext>();
-                context.Database.Migrate();
-                Console.WriteLine("Migrations applied successfully.");
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine($"An error occurred while applying migrations: {ex.Message}");
-            }
-        }
-
-        // Agrega swagger si esta en dev.
-        if (app.Environment.IsDevelopment())
-        {
-            // Swagger documentation
-            app.UseSwagger();
-            app.UseSwaggerUI();
-        }
-
-        // Endpoint Routing
-        app.MapControllers();
-
-        // Empieza la applicacion
-        app.Run();
+    }
+    
+    //Funcion para agregar los servicios
+    private static void ConfigurarServicios(WebApplicationBuilder builder)
+    {
+        builder.Services.AddControllers();
+        builder.Services.AddEndpointsApiExplorer();
+        builder.Services.AddSwaggerGen();
+        AgregarDatabase(builder);
     }
 
-    public static void ConfigurarServicios(WebApplicationBuilder builder)
+    //Funcion para agregar PostgreSQL y poder conectarse a la base de datos
+
+    private static void AgregarDatabase(WebApplicationBuilder builder)
     {
-        // Agregar los controlees 
-        builder.Services.AddControllers();
-
-        builder.Services.AddEndpointsApiExplorer();
-
-        // Agregar Swagger alos servicios
-        builder.Services.AddSwaggerGen();
-
-        // Conseguir el connection string de la base de datos, del configuration file.
         var connectionString = builder.Configuration.GetConnectionString("psqlconn");
-
-        // Agregar el database context, y configurarlo para usar PostgreSQL
         builder.Services.AddDbContext<MarcasAutosDbContext>(options =>
             options.UseNpgsql(connectionString)
         );
+    }
+
+    // Funcion para aplicar las migraciones.
+    private static void AplicarMigrations(WebApplication app)
+    {
+        using var scope = app.Services.CreateScope();
+        var services = scope.ServiceProvider;
+        try
+        {
+            var context = services.GetRequiredService<MarcasAutosDbContext>();
+            context.Database.Migrate();
+            Console.WriteLine("Migrations aplicadas correctamente.");
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Hubo un error con los migrations: {ex.Message}");
+        }
+    }
+
+    //Funcion para agregar swagger solamente en development
+    private static void ConfigurarApp(WebApplication app)
+    {
+        if (app.Environment.IsDevelopment())
+        {
+            app.UseSwagger();
+            app.UseSwaggerUI();
+        }
+        app.MapControllers();
     }
 }
