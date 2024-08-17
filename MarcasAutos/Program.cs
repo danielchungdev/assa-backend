@@ -18,16 +18,16 @@ public class Program
 
         using (var scope = app.Services.CreateScope())
         {
-            var dbContext = scope.ServiceProvider.GetRequiredService<MarcasAutosDbContext>();
+            var services = scope.ServiceProvider;
             try
             {
-                // Try to connect to the database and perform a simple query
-                dbContext.Database.ExecuteSqlRaw("SELECT 1");
-                Console.WriteLine("Successfully connected to the database.");
+                var context = services.GetRequiredService<MarcasAutosDbContext>();
+                context.Database.Migrate();
+                Console.WriteLine("Migrations applied successfully.");
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"Database connection failed: {ex.Message}");
+                Console.WriteLine($"An error occurred while applying migrations: {ex.Message}");
             }
         }
 

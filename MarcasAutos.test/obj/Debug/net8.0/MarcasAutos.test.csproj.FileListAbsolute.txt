@@ -115,3 +115,4 @@
 /Users/danielchung/Desktop/MarcasAutos/MarcasAutos.test/bin/Debug/net8.0/Swashbuckle.AspNetCore.SwaggerUI.dll
 /Users/danielchung/Desktop/MarcasAutos/MarcasAutos.test/bin/Debug/net8.0/MarcasAutos.dll
 /Users/danielchung/Desktop/MarcasAutos/MarcasAutos.test/bin/Debug/net8.0/MarcasAutos.pdb
+/Users/danielchung/Desktop/MarcasAutos/MarcasAutos.test/obj/Debug/net8.0/MarcasAutos.test.sourcelink.json

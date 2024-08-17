@@ -19,6 +19,5 @@ namespace MarcasAutos.Tests
             // Asegurarnos que tiene nuestro db context
             Assert.Contains(services, s => s.ServiceType == typeof(MarcasAutosDbContext));
         }
-
     }
 }
