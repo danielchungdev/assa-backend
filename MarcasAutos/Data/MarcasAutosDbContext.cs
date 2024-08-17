@@ -9,7 +9,7 @@ namespace MarcasAutos.Data
         {
 
         }
-
+        //Crea la tabla de Marcas Autos
         public DbSet<MarcaAuto> MarcasAutos {get; set;}
 
         //Data Seeding prepopula la base de datos con valores, corre en un migration script diferent.
