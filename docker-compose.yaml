@@ -1,0 +1,45 @@
+version: '3.8'
+
+services:
+  db:
+    image: postgres:latest
+    environment:
+      POSTGRES_DB: MarcasAutos
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: password
+    ports:
+      - "5433:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d MarcasAutos"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  api:
+    build:
+      context: ./MarcasAutos  # Specify the path to your project folder
+      dockerfile: Dockerfile
+    ports:
+      - "8080:80"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ConnectionStrings__psqlconn=Host=db;Database=MarcasAutos;Username=postgres;Password=password
+    depends_on:
+      db:
+        condition: service_healthy
+
+  migration:
+    build:
+      context: ./MarcasAutos  # Specify the path to your project folder
+      dockerfile: Dockerfile
+    command: ["dotnet", "ef", "database", "update"]
+    environment:
+      - ConnectionStrings__psqlconn=Host=db;Database=MarcasAutos;Username=postgres;Password=password
+    depends_on:
+      db:
+        condition: service_healthy
+
+volumes:
+  postgres_data:
